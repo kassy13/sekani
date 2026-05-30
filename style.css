@@ -245,7 +245,7 @@ button {
 }
 
 /* ============================================================
-   SCENES — stacked absolutely
+   SCENES � stacked absolutely
    ============================================================ */
 .scene {
     position: absolute;
@@ -391,7 +391,7 @@ button {
 }
 
 /* ============================================================
-   SCENE 1 — GIFT UNWRAP
+   SCENE 1 � GIFT UNWRAP
    ============================================================ */
 .scene-1 {
     background: radial-gradient(ellipse at 50% 60%, rgba(123, 47, 190, 0.18) 0%, transparent 70%);
@@ -637,7 +637,7 @@ button {
 }
 
 /* ============================================================
-   SCENE 2 — BIRTHDAY CARD (full viewport, two-column)
+   SCENE 2 � BIRTHDAY CARD (full viewport, two-column)
    ============================================================ */
 .scene-2 {
     padding: 0;
@@ -826,7 +826,7 @@ button {
     background: rgba(200, 184, 255, 0.05);
 }
 
-/* Right column — photo */
+/* Right column � photo */
 .bday-right {
     display: flex;
     align-items: center;
@@ -916,7 +916,7 @@ button {
 }
 
 /* ============================================================
-   SCENE 3 — GALLERY
+   SCENE 3 � GALLERY
    ============================================================ */
 .gallery-grid {
     display: grid;
@@ -977,7 +977,7 @@ button {
 }
 
 /* ============================================================
-   SCENE 3 — POSTCARDS (31 wishes)
+   SCENE 3 � POSTCARDS (31 wishes)
    ============================================================ */
 .scene-3 {
     background: radial-gradient(ellipse at 50% 60%, rgba(123, 47, 190, 0.14) 0%, transparent 70%);
@@ -1151,7 +1151,7 @@ button {
 }
 
 /* ============================================================
-   SCENE 4 — VIRTUAL CAKE (Make a Wish)
+   SCENE 4 � VIRTUAL CAKE (Make a Wish)
    ============================================================ */
 .scene-4 {
     padding: 0;
@@ -1290,7 +1290,7 @@ button {
 }
 
 /* ============================================================
-   SCENE 5 — GUESTBOOK
+   SCENE 5 � GUESTBOOK
    ============================================================ */
 .guestbook-grid {
     display: grid;
@@ -1871,7 +1871,7 @@ button {
 }
 
 /* ============================================================
-   WISHES — 31 cards counter
+   WISHES � 31 cards counter
    ============================================================ */
 .wishes-counter {
     font-size: 0.72rem;
@@ -1887,7 +1887,7 @@ button {
 }
 
 /* ============================================================
-   GIFT — extra sparkles
+   GIFT � extra sparkles
    ============================================================ */
 .sparkle-field {
     position: absolute;
@@ -1920,7 +1920,7 @@ button {
     }
 }
 
-/* Burst — more rays (12 now) */
+/* Burst � more rays (12 now) */
 .burst span:nth-child(9) {
     transform: rotate(22.5deg) translateY(-100%);
 }
@@ -2704,7 +2704,7 @@ button {
 }
 
 /* ============================================================
-   RESPONSIVE — new elements
+   RESPONSIVE � new elements
    ============================================================ */
 @media (max-width: 768px) {
     .timeline-spine {
@@ -2767,7 +2767,7 @@ button {
 }
 
 /* ============================================================
-   SCENE 6 — 31 THINGS WE LOVE
+   SCENE 6 � 31 THINGS WE LOVE
    ============================================================ */
 .love-scene {
     width: 100%;
@@ -2912,7 +2912,7 @@ button {
 }
 
 /* ============================================================
-   IMPROVED CAKE — flames with layered structure
+   IMPROVED CAKE � flames with layered structure
    ============================================================ */
 .candle {
     display: flex;
@@ -3102,7 +3102,9 @@ button {
 }
 
 /* ============================================================
-   MEMORY LANE — PHOTO POSTCARD CAROUSEL
+
+/* ============================================================
+   MEMORY LANE — HORIZONTAL ZIGZAG, GSAP-PANNED
    ============================================================ */
 .memory-lane-scene {
     width: 100%;
@@ -3111,227 +3113,176 @@ button {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1.5rem 1rem 1rem;
+    padding: 1.25rem 0 1rem;
     gap: 1rem;
     overflow: hidden;
 }
 .memory-header {
     flex-shrink: 0;
 }
-.mem-stage-wrap {
-    position: relative;
-    width: min(92vw, 400px);
-    height: clamp(340px, 56vh, 500px);
-    flex-shrink: 0;
-}
-.mem-stage {
+
+/* Outer clip — hides overflow as track pans */
+.mem-track-wrap {
     position: relative;
     width: 100%;
-    height: 100%;
-}
-.mem-card {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transform: translateY(28px) scale(0.93) rotate(var(--tilt, 0deg));
-    transition:
-        opacity 0.5s ease,
-        transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-    pointer-events: none;
-}
-.mem-card.active {
-    opacity: 1;
-    transform: translateY(0) scale(1) rotate(var(--tilt, 0deg));
-    pointer-events: all;
-}
-.mem-card.exit-left {
-    opacity: 0;
-    transform: translateX(-80px) scale(0.9) rotate(var(--tilt, 0deg));
-}
-.mem-card.exit-right {
-    opacity: 0;
-    transform: translateX(80px) scale(0.9) rotate(var(--tilt, 0deg));
-}
-.mem-card-inner {
-    width: 100%;
-    height: 100%;
-    background: #fff;
-    border-radius: 6px;
-    box-shadow:
-        0 16px 50px rgba(0, 0, 0, 0.55),
-        0 4px 14px rgba(0, 0, 0, 0.3);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-}
-.mem-photo-wrap {
-    position: relative;
     flex: 1;
     min-height: 0;
     overflow: hidden;
-}
-.mem-photo-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-.mem-num {
-    position: absolute;
-    top: 0.6rem;
-    right: 0.75rem;
-    font-family: var(--fd);
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.95);
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
-    line-height: 1;
-}
-.mem-wish-wrap {
-    flex-shrink: 0;
-    padding: 0.85rem 1rem 0.9rem;
-    background: #fff;
-    border-top: 1px solid rgba(0, 0, 0, 0.06);
-}
-.mem-wish {
-    font-family: var(--fd);
-    font-style: italic;
-    font-size: clamp(0.78rem, 1.6vw, 0.9rem);
-    color: #333;
-    line-height: 1.55;
-    margin: 0;
-}
-.mem-nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(11, 12, 30, 0.75);
-    border: 1px solid var(--glass-rose);
-    color: var(--rose);
-    font-size: 1.4rem;
     display: flex;
     align-items: center;
-    justify-content: center;
-    backdrop-filter: var(--blur-sm);
-    transition:
-        background 0.2s,
-        transform 0.2s;
-    z-index: 10;
-    cursor: pointer;
-}
-.mem-nav-btn:hover {
-    background: rgba(255, 107, 157, 0.2);
-    transform: translateY(-50%) scale(1.1);
-}
-.mem-prev {
-    left: -20px;
-}
-.mem-next {
-    right: -20px;
-}
-.mem-footer {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    width: min(92vw, 400px);
-    flex-shrink: 0;
-}
-.mem-counter-text {
-    font-size: 0.7rem;
-    letter-spacing: 0.18em;
-    color: var(--txt-m);
-    white-space: nowrap;
-    flex-shrink: 0;
-}
-.mem-counter-text span {
-    color: var(--rose);
-    font-weight: 600;
-}
-.mem-progress-bar {
-    flex: 1;
-    height: 2px;
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 2px;
-    overflow: hidden;
-}
-.mem-progress-fill {
-    height: 100%;
-    width: 0%;
-    background: linear-gradient(90deg, var(--violet), var(--rose));
-    border-radius: 2px;
-    transition: width 0.3s ease;
 }
 
-.gallery-scene {
-    width: 100%;
-    height: 100%;
+/* Horizontal spine — extends far enough to cover all cards */
+.mem-track-spine {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 2px;
+    width: 10000px;
+    transform: translateY(-50%);
+    background: linear-gradient(to right, transparent 0%, var(--rose) 1%, var(--violet) 50%, var(--rose) 99%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* The moving track */
+.mem-track {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+    position: relative;
+    z-index: 1;
+    will-change: transform;
+    padding: 0 6vw;
+}
+
+/* Each item slot */
+.mem-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 1.25rem;
-    padding: 2rem;
-}
-.gallery-scene-header {
+    width: 200px;
     flex-shrink: 0;
-}
-.gallery-mosaic {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 0.6rem;
-    width: min(96vw, 900px);
-    height: clamp(280px, 52vh, 480px);
-    flex-shrink: 0;
-}
-.mosaic-item {
     position: relative;
-    border-radius: var(--r-lg);
-    overflow: hidden;
+}
+
+/* Card above spine — card first, then stem, then dot */
+.mem-item-top {
+    flex-direction: column-reverse;
+}
+
+/* Card below spine — dot first, then stem, then card */
+.mem-item-bottom {
+    flex-direction: column;
+}
+
+/* The card */
+.mem-item-card {
+    width: 178px;
+    background: rgba(11, 12, 30, 0.92);
     border: 1px solid var(--glass-b);
+    border-radius: var(--r-md);
+    overflow: hidden;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.55);
     transition:
-        transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
-        box-shadow 0.4s;
+        transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+        box-shadow 0.3s;
+    flex-shrink: 0;
 }
-.mosaic-item:hover {
-    transform: scale(1.03) translateY(-3px);
+.mem-item-card:hover {
+    transform: translateY(-5px) scale(1.03);
     box-shadow: 0 16px 40px rgba(255, 107, 157, 0.3);
-    z-index: 5;
 }
-.mosaic-item img {
+.mem-item-photo {
+    width: 100%;
+    height: 88px;
+    overflow: hidden;
+}
+.mem-item-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
     transition: transform 0.5s ease;
 }
-.mosaic-item:hover img {
+.mem-item-card:hover .mem-item-photo img {
     transform: scale(1.07);
 }
-.mosaic-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(7, 8, 15, 0.5) 0%, transparent 60%);
-    pointer-events: none;
+.mem-item-body {
+    padding: 0.5rem 0.6rem 0.55rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.22rem;
 }
-.mosaic-tall {
-    grid-row: span 2;
+.mem-item-num {
+    font-family: var(--fd);
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: var(--rose);
+    opacity: 0.75;
+    text-transform: uppercase;
 }
-.mosaic-wide {
-    grid-column: span 2;
+.mem-item-wish {
+    font-family: var(--fd);
+    font-style: italic;
+    font-size: 0.7rem;
+    color: var(--txt-2);
+    line-height: 1.5;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
+.mem-item-author {
+    font-size: 0.56rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--rose-l);
+    font-weight: 500;
+}
+
+/* Stem connecting card to spine dot */
+.mem-item-stem {
+    width: 2px;
+    height: 24px;
+    flex-shrink: 0;
+}
+.mem-item-top .mem-item-stem {
+    background: linear-gradient(to top, var(--rose), var(--violet));
+}
+.mem-item-bottom .mem-item-stem {
+    background: linear-gradient(to bottom, var(--rose), var(--violet));
+}
+
+/* Dot on the spine */
+.mem-item-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--rose), var(--violet));
+    box-shadow:
+        0 0 0 3px rgba(255, 107, 157, 0.2),
+        0 0 10px rgba(255, 107, 157, 0.5);
+    flex-shrink: 0;
+    z-index: 2;
+}
+
 @media (max-width: 600px) {
-    .gallery-mosaic {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: repeat(3, 1fr);
+    .mem-item {
+        width: 150px;
     }
-    .mosaic-tall {
-        grid-row: span 1;
+    .mem-item-card {
+        width: 134px;
     }
-    .mosaic-wide {
-        grid-column: span 2;
+    .mem-item-photo {
+        height: 68px;
+    }
+    .mem-item-wish {
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
     }
 }

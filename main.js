@@ -351,83 +351,77 @@ gsap.registerPlugin(ScrollTrigger);
         },
     ];
 
-    /* -- MEMORY LANE (Scene 3) -- photo postcard carousel -- */
+    /* -- MEMORY LANE (Scene 3) -- horizontal zigzag, GSAP-driven pan -- */
     var memoryPath = document.getElementById('memoryPath');
     var realImgs = ['Images/slide1.jpeg', 'Images/slide2.jpeg', 'Images/slide3.jpeg', 'Images/slide4.jpeg', 'Images/slide5.jpeg'];
-    var memCurrent = 0;
-    var memCards = [];
 
     if (memoryPath) {
         postcardData.forEach(function (p, i) {
-            var card = document.createElement('div');
-            card.className = 'mem-card' + (i === 0 ? ' active' : '');
-            card.style.setProperty('--tilt', p.tilt * 0.5 + 'deg');
-            card.innerHTML =
-                '<div class="mem-card-inner">' +
-                '<div class="mem-photo-wrap">' +
+            var side = i % 2 === 0 ? 'top' : 'bottom';
+            var item = document.createElement('div');
+            item.className = 'mem-item mem-item-' + side;
+            item.innerHTML =
+                '<div class="mem-item-card">' +
+                '<div class="mem-item-photo">' +
                 '<img src="' +
                 realImgs[i % realImgs.length] +
                 '" alt="Memory ' +
                 (i + 1) +
                 '" loading="lazy" />' +
-                '<span class="mem-num">' +
+                '</div>' +
+                '<div class="mem-item-body">' +
+                '<span class="mem-item-num">' +
                 (i + 1) +
                 '</span>' +
-                '</div>' +
-                '<div class="mem-wish-wrap">' +
-                '<p class="mem-wish">\u201c' +
+                '<p class="mem-item-wish">\u201c' +
                 p.wish +
                 '\u201d</p>' +
+                '<span class="mem-item-author">\u2014 ' +
+                p.author +
+                '</span>' +
                 '</div>' +
-                '</div>';
-            memoryPath.appendChild(card);
-            memCards.push(card);
-        });
-    }
-
-    function goMem(idx) {
-        var prev = memCurrent;
-        memCurrent = (idx + postcardData.length) % postcardData.length;
-        memCards[prev].classList.remove('active');
-        memCards[prev].classList.add(memCurrent > prev ? 'exit-left' : 'exit-right');
-        setTimeout(function () {
-            memCards[prev].classList.remove('exit-left', 'exit-right');
-        }, 500);
-        memCards[memCurrent].classList.add('active');
-        var fill = document.getElementById('memFill');
-        var ctr = document.getElementById('memCounter');
-        if (fill) fill.style.width = (memCurrent / (postcardData.length - 1)) * 100 + '%';
-        if (ctr) ctr.textContent = memCurrent + 1;
-    }
-
-    var memPrevBtn = document.getElementById('memPrev');
-    var memNextBtn = document.getElementById('memNext');
-    if (memPrevBtn)
-        memPrevBtn.addEventListener('click', function () {
-            goMem(memCurrent - 1);
-        });
-    if (memNextBtn)
-        memNextBtn.addEventListener('click', function () {
-            goMem(memCurrent + 1);
+                '</div>' +
+                '<div class="mem-item-stem" aria-hidden="true"></div>' +
+                '<div class="mem-item-dot" aria-hidden="true"></div>';
+            memoryPath.appendChild(item);
         });
 
-    if (memoryPath) {
-        var msx = 0;
-        memoryPath.addEventListener(
-            'touchstart',
-            function (e) {
-                msx = e.touches[0].clientX;
-            },
-            {passive: true},
-        );
-        memoryPath.addEventListener(
-            'touchend',
-            function (e) {
-                var d = msx - e.changedTouches[0].clientX;
-                if (Math.abs(d) > 40) goMem(d > 0 ? memCurrent + 1 : memCurrent - 1);
-            },
-            {passive: true},
-        );
+        // Set up GSAP horizontal pan driven by main scroll
+        requestAnimationFrame(function () {
+            var trackWrap = document.getElementById('memTrackWrap');
+            if (!trackWrap) return;
+            var totalW = memoryPath.scrollWidth;
+            var viewW = trackWrap.offsetWidth;
+            var maxPan = Math.max(0, totalW - viewW + 40);
+
+            // Pan the track while scene3 is the active scene (beats 2→3, ~28%–50% of scroll)
+            gsap.to(memoryPath, {
+                x: -maxPan,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: '.scroll-container',
+                    start: '28% top',
+                    end: '50% top',
+                    scrub: 1.5,
+                },
+            });
+
+            // Reveal cards with a stagger as the scene enters
+            gsap.from('#memoryPath .mem-item', {
+                opacity: 0,
+                y: function (i) {
+                    return i % 2 === 0 ? -20 : 20;
+                },
+                duration: 0.5,
+                ease: 'back.out(1.4)',
+                stagger: 0.04,
+                scrollTrigger: {
+                    trigger: '.scroll-container',
+                    start: '28% top',
+                    once: true,
+                },
+            });
+        });
     }
 
     /* â”€â”€ 31 THINGS WE LOVE (Scene 6) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */

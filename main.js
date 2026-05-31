@@ -1,11 +1,11 @@
 ﻿/* ============================================================
-   GSAP + ScrollTrigger — Birthday Website v4
+   GSAP + ScrollTrigger � Birthday Website v4
    6 Scenes: Gift | Card+Carousel | Timeline | 31 Wishes | Cake | Guestbook
    + Cursor Trail | Countdown Stats | Karaoke Lyrics | Cinematic Intro
    ============================================================ */
 gsap.registerPlugin(ScrollTrigger);
 (function () {
-    /* ── PARTICLES ─────────────────────────────────────────── */
+    /* -- PARTICLES ------------------------------------------- */
     var canvas = document.getElementById('particleCanvas');
     var ctx = canvas.getContext('2d');
     var W,
@@ -58,7 +58,7 @@ gsap.registerPlugin(ScrollTrigger);
         ScrollTrigger.refresh();
     });
 
-    /* ── CONFETTI FIELD ─────────────────────────────────────── */
+    /* -- CONFETTI FIELD --------------------------------------- */
     var cfField = document.createElement('div');
     cfField.style.cssText = 'position:fixed;inset:0;pointer-events:none;z-index:999;overflow:hidden';
     document.body.appendChild(cfField);
@@ -95,7 +95,7 @@ gsap.registerPlugin(ScrollTrigger);
         }
     }
 
-    /* ── SPARKLE FIELD (gift scene) ─────────────────────────── */
+    /* -- SPARKLE FIELD (gift scene) --------------------------- */
     var sparkleField = document.getElementById('sparkleField');
     var sparkleColors = ['#FF6B9D', '#C8B8FF', '#FFE4F0', '#F5C842', '#9D4EDD'];
     function buildSparkles() {
@@ -117,10 +117,10 @@ gsap.registerPlugin(ScrollTrigger);
     }
     buildSparkles();
 
-    /* ── CINEMATIC INTRO ────────────────────────────────────── */
+    /* -- CINEMATIC INTRO -------------------------------------- */
     var introCinematic = document.getElementById('introCinematic');
     var countdownStats = document.getElementById('countdownStats');
-    // Hide intro text immediately — removed per design
+    // Hide intro text immediately � removed per design
     if (introCinematic) introCinematic.style.display = 'none';
     // Show stats after a short delay
     gsap.to(countdownStats, {
@@ -130,7 +130,7 @@ gsap.registerPlugin(ScrollTrigger);
         delay: 0.8,
     });
 
-    /* ── COUNTDOWN STATS ────────────────────────────────────── */
+    /* -- COUNTDOWN STATS -------------------------------------- */
     // Sekani's birthday: May 31, 1995
     var birthday = new Date('1995-05-31T00:00:00');
     var now = new Date();
@@ -161,7 +161,7 @@ gsap.registerPlugin(ScrollTrigger);
         if (hEl) animateCount(hEl, heartbeats, 2.5);
     }, 900);
 
-    /* ── POSTCARD DATA (31 wishes as polaroid postcards) ───── */
+    /* -- POSTCARD DATA (31 wishes as polaroid postcards) ----- */
     var postcardData = [
         {
             img: 'https://picsum.photos/seed/pc1/400/500',
@@ -183,13 +183,13 @@ gsap.registerPlugin(ScrollTrigger);
         },
         {
             img: 'https://picsum.photos/seed/pc4/400/500',
-            wish: "You've always been the calm in every storm. May 31 be the year the universe gives back everything you've poured into others.",
+            wish: "You've always been the calm in every storm. May this be the year the universe gives back everything you've poured into others.",
             author: 'Kofi',
             tilt: 3,
         },
         {
             img: 'https://picsum.photos/seed/pc5/400/500',
-            wish: 'To the most thoughtful, brilliant, and genuinely kind person I know — may 31 be the chapter where everything clicks into place.',
+            wish: 'To the most thoughtful, brilliant, and genuinely kind person I know  may this be the chapter where everything clicks into place.',
             author: 'Amara',
             tilt: -1,
         },
@@ -225,7 +225,7 @@ gsap.registerPlugin(ScrollTrigger);
         },
         {
             img: 'https://picsum.photos/seed/pc11/400/500',
-            wish: 'May 31 be the year you finally give yourself the same grace you so freely give to everyone else.',
+            wish: ' the year you finally give yourself the same grace you so freely give to everyone else.',
             author: 'Chidi',
             tilt: -1.5,
         },
@@ -243,7 +243,7 @@ gsap.registerPlugin(ScrollTrigger);
         },
         {
             img: 'https://picsum.photos/seed/pc14/400/500',
-            wish: 'To the person who always shows up — may this year, the universe shows up for you in ways that take your breath away.',
+            wish: 'To the person who always shows up may this year, the universe shows up for you in ways that take your breath away.',
             author: 'Funmi',
             tilt: 1,
         },
@@ -255,7 +255,7 @@ gsap.registerPlugin(ScrollTrigger);
         },
         {
             img: 'https://picsum.photos/seed/pc16/400/500',
-            wish: "May your 31st year be filled with the kind of joy that doesn't need a reason — just pure, effortless happiness.",
+            wish: "May your 31st year be filled with the kind of joy that doesn't need a reason just pure, effortless happiness.",
             author: 'Dayo',
             tilt: 3.5,
         },
@@ -267,7 +267,7 @@ gsap.registerPlugin(ScrollTrigger);
         },
         {
             img: 'https://picsum.photos/seed/pc18/400/500',
-            wish: 'You carry so much light in you, Sekani. May 31 be the year you finally let yourself bask in it.',
+            wish: 'You carry so much light in you, Sekani. May this be the  year you finally let yourself bask in it.',
             author: 'Tunde',
             tilt: 2.5,
         },
@@ -285,7 +285,7 @@ gsap.registerPlugin(ScrollTrigger);
         },
         {
             img: 'https://picsum.photos/seed/pc21/400/500',
-            wish: 'To 31 years of being exactly who you are — unapologetically, beautifully, powerfully you.',
+            wish: 'To 31 years of being exactly who you are unapologetically, beautifully, powerfully you.',
             author: 'Ify',
             tilt: -2.5,
         },
@@ -297,7 +297,7 @@ gsap.registerPlugin(ScrollTrigger);
         },
         {
             img: 'https://picsum.photos/seed/pc23/400/500',
-            wish: "You've given so much of yourself to others. May 31 be the year you pour into yourself just as generously.",
+            wish: "You've given so much of yourself to others. Maythis be the year you pour into yourself just as generously.",
             author: 'Toyin',
             tilt: -1.5,
         },
@@ -333,7 +333,7 @@ gsap.registerPlugin(ScrollTrigger);
         },
         {
             img: 'https://picsum.photos/seed/pc29/400/500',
-            wish: 'You are one of the rare ones — the kind of person who makes the world better just by existing in it.',
+            wish: 'You are one of the rare ones the kind of person who makes the world better just by existing in it.',
             author: 'Fola',
             tilt: -1,
         },
@@ -345,7 +345,7 @@ gsap.registerPlugin(ScrollTrigger);
         },
         {
             img: 'https://picsum.photos/seed/pc31/400/500',
-            wish: 'And here we are — 31 beautiful years later. The best is absolutely still ahead of you. We love you, Sekani. ♥',
+            wish: 'And here we are 31 beautiful years later. The best is absolutely still ahead of you. We love you, Sekani. ?',
             author: 'Everyone',
             tilt: -2,
         },
@@ -407,7 +407,7 @@ gsap.registerPlugin(ScrollTrigger);
         });
     }
 
-    /* ── 31 THINGS WE LOVE (Scene 6) ───────────────────────── */
+    /* -- 31 THINGS WE LOVE (Scene 6) ------------------------- */
     var loveItems = [
         'Your laugh that fills the whole room',
         'The way you make everyone feel seen',
@@ -415,7 +415,7 @@ gsap.registerPlugin(ScrollTrigger);
         'How you turn pain into poetry',
         'Your ridiculous sense of humour',
         'The warmth you carry everywhere',
-        'Your loyalty — fierce and unwavering',
+        'Your loyalty fierce and unwavering',
         'How you remember the small things',
         'Your ability to find beauty in ordinary moments',
         'The way you show up, every single time',
@@ -423,23 +423,23 @@ gsap.registerPlugin(ScrollTrigger);
         'How you love without keeping score',
         'Your curiosity about everything',
         'The grace you extend to others',
-        'Your voice — speaking and singing',
+        'Your voice speaking and singing',
         'How you hold space for people',
         'Your ambition wrapped in humility',
-        "The way you dance like no one's watching",
-        'Your taste — in music, in life, in people',
+        "The way you dance like no one's watching lol",
+        'Your taste in music, in life, in people',
         'How you make hard days feel lighter',
-        'Your resilience — quiet and unshakeable',
+        'Your resilience quiet and unshakeable Poise and Grace',
         'The way you dream, big and bold',
         'Your kindness that asks for nothing back',
         'How you make ordinary days feel special',
-        'Your patience — a rare and precious gift',
+        'Your wisdom a rare and precious gift',
         'The way you celebrate others genuinely',
         'Your creativity that surprises everyone',
         'How you carry your culture with pride',
-        'Your heart — open, generous, full',
+        'Your heart open, generous, full',
         'The way you keep growing, keep becoming',
-        'Simply being you — Sekani Chiamaka Joy ♥',
+        'Simply being you Sekani Chiamaka Joy',
     ];
 
     var loveGrid = document.getElementById('loveGrid');
@@ -452,7 +452,7 @@ gsap.registerPlugin(ScrollTrigger);
         });
     }
 
-    /* ── PHOTO CAROUSEL (Scene 2) ───────────────────────────── */
+    /* -- PHOTO CAROUSEL (Scene 2) ----------------------------- */
     var carouselTrack = document.getElementById('carouselTrack');
     var carouselDots = document.getElementById('carouselDots');
     var carouselPrev = document.getElementById('carouselPrev');
@@ -497,7 +497,7 @@ gsap.registerPlugin(ScrollTrigger);
         resetCarouselTimer();
     }
 
-    /* ── VIRTUAL CAKE ───────────────────────────────────────── */
+    /* -- VIRTUAL CAKE ----------------------------------------- */
     var micBtn = document.getElementById('micBtn');
     var micLabel = document.getElementById('micLabel');
     var cakePrompt = document.getElementById('cakePrompt');
@@ -667,7 +667,7 @@ gsap.registerPlugin(ScrollTrigger);
         }
     });
 
-    /* ── GSAP SCENE REFS ────────────────────────────────────── */
+    /* -- GSAP SCENE REFS -------------------------------------- */
     var scene1 = document.getElementById('scene1');
     var scene2 = document.getElementById('scene2');
     var scene3 = document.getElementById('scene3');
@@ -680,7 +680,7 @@ gsap.registerPlugin(ScrollTrigger);
     var burst = document.getElementById('burst');
     var confettiBurst = document.getElementById('confettiBurst');
 
-    /* ── INITIAL STATES ─────────────────────────────────────── */
+    /* -- INITIAL STATES --------------------------------------- */
     gsap.set(scene2, {y: '8vh', scale: 0.92, opacity: 0, filter: 'blur(10px)'});
     gsap.set(scene3, {y: '10vh', scale: 0.88, opacity: 0, filter: 'blur(12px)'});
     gsap.set(scene6, {y: '12vh', scale: 0.85, opacity: 0, filter: 'blur(14px)'});
@@ -690,10 +690,10 @@ gsap.registerPlugin(ScrollTrigger);
     gsap.set(burst, {opacity: 0, scale: 0.5});
     gsap.set(confettiBurst.querySelectorAll('span'), {x: 0, y: 0, opacity: 0, rotation: 0});
 
-    /* ── MASTER TIMELINE ────────────────────────────────────── */
+    /* -- MASTER TIMELINE -------------------------------------- */
     var tl = gsap.timeline({defaults: {ease: 'expo.inOut'}});
 
-    // Beat 0→1: gift opens
+    // Beat 0?1: gift opens
     tl.to(giftLid, {y: -200, rotation: -30, scale: 0.75, opacity: 0, ease: 'back.in(1.5)', duration: 0.8}, 0);
     tl.to(giftInnerGlow, {opacity: 1, duration: 0.4}, 0.3);
     tl.to(burst, {opacity: 1, scale: 1.8, duration: 0.7, ease: 'power2.out'}, 0.35);
@@ -718,11 +718,11 @@ gsap.registerPlugin(ScrollTrigger);
         0.45,
     );
 
-    // Beat 1→2
+    // Beat 1?2
     tl.to(scene1, {y: '-110vh', scale: 0.84, opacity: 0, filter: 'blur(18px)', duration: 1}, 1);
     tl.to(scene2, {y: '0vh', scale: 1, opacity: 1, filter: 'blur(0px)', duration: 1}, 1);
 
-    // Beat 2→3
+    // Beat 2?3
     tl.to(scene2, {y: '-110vh', scale: 0.84, opacity: 0, filter: 'blur(18px)', duration: 1}, 2);
     tl.to(scene3, {y: '0vh', scale: 1, opacity: 1, filter: 'blur(0px)', duration: 1}, 2);
 
@@ -798,7 +798,7 @@ gsap.registerPlugin(ScrollTrigger);
         },
     });
 
-    /* ── PROGRESS DOT CLICK ─────────────────────────────────── */
+    /* -- PROGRESS DOT CLICK ----------------------------------- */
     var snapPts = [0, 1 / 4, 2 / 4, 3 / 4, 1];
     document.querySelectorAll('.prog-dot').forEach(function (dot, i) {
         dot.addEventListener('click', function () {
@@ -807,16 +807,18 @@ gsap.registerPlugin(ScrollTrigger);
         });
     });
 
-    /* ── AUDIO ──────────────────────────────────────────────── */
+    /* -- AUDIO ------------------------------------------------ */
     var audio = document.getElementById('bgAudio');
     var audioBtn = document.getElementById('audioBtn');
     var iconPlay = document.getElementById('iconPlay');
     var iconMute = document.getElementById('iconMute');
     var audioBars = document.getElementById('audioBars');
     var playing = false;
+
     function setPlaying(s) {
         playing = s;
         if (s) {
+            audio.muted = false;
             audio.play().catch(function () {});
             iconPlay.style.display = 'none';
             iconMute.style.display = 'block';
@@ -828,29 +830,66 @@ gsap.registerPlugin(ScrollTrigger);
             audioBars.classList.remove('playing');
         }
     }
+
     audioBtn.addEventListener('click', function () {
         setPlaying(!playing);
     });
-    // Attempt autoplay immediately; browsers may block it until user interaction
+
+    // Unmute and set volume
+    audio.muted = false;
+    audio.volume = 1.0;
+
+    // Try to play immediately
+    var tryPlay = function () {
+        audio
+            .play()
+            .then(function () {
+                setPlaying(true);
+            })
+            .catch(function () {
+                // If blocked, try on any interaction
+                var startOnce = function () {
+                    if (!playing) {
+                        audio.muted = false;
+                        audio
+                            .play()
+                            .then(function () {
+                                setPlaying(true);
+                            })
+                            .catch(function () {});
+                    }
+                    window.removeEventListener('wheel', startOnce);
+                    window.removeEventListener('touchstart', startOnce);
+                    window.removeEventListener('click', startOnce);
+                    window.removeEventListener('scroll', startOnce);
+                    window.removeEventListener('keydown', startOnce);
+                    window.removeEventListener('mousemove', startOnce);
+                };
+                window.addEventListener('wheel', startOnce, {passive: true, once: true});
+                window.addEventListener('touchstart', startOnce, {passive: true, once: true});
+                window.addEventListener('click', startOnce, {passive: true, once: true});
+                window.addEventListener('scroll', startOnce, {passive: true, once: true});
+                window.addEventListener('keydown', startOnce, {passive: true, once: true});
+                window.addEventListener('mousemove', startOnce, {passive: true, once: true});
+            });
+    };
+
+    // Try multiple times
+    tryPlay();
+    setTimeout(tryPlay, 100);
+    setTimeout(tryPlay, 500);
+    setTimeout(tryPlay, 1000);
+
+    // Also start immediately without waiting
     audio
         .play()
         .then(function () {
             setPlaying(true);
         })
-        .catch(function () {
-            // Autoplay blocked — start on first interaction
-            var startOnce = function () {
-                if (!playing) setPlaying(true);
-                window.removeEventListener('wheel', startOnce);
-                window.removeEventListener('touchstart', startOnce);
-                window.removeEventListener('click', startOnce);
-            };
-            window.addEventListener('wheel', startOnce, {passive: true});
-            window.addEventListener('touchstart', startOnce, {passive: true});
-            window.addEventListener('click', startOnce, {passive: true});
-        });
+        .catch(function () {});
+    setTimeout(tryPlay, 1000);
 
-    /* ── CURSOR TRAIL ───────────────────────────────────────── */
+    /* -- CURSOR TRAIL ----------------------------------------- */
     var trailCanvas = document.getElementById('cursorTrail');
     var tCtx = trailCanvas.getContext('2d');
     var trailW, trailH;
@@ -923,7 +962,7 @@ gsap.registerPlugin(ScrollTrigger);
     }
     animateTrail();
 
-    /* ── KARAOKE LYRICS ─────────────────────────────────────── */
+    /* -- KARAOKE LYRICS --------------------------------------- */
     // Edit these lines to match your actual song lyrics and timestamps (in seconds)
     // Format: { t: startTime, text: 'lyric line', words: [wordEndTimes...] }
     // Set t:-1 for section breaks (blank spacer lines)
@@ -991,7 +1030,7 @@ gsap.registerPlugin(ScrollTrigger);
         {t: 167, text: 'Happy birthday, my sister', words: []},
         {t: 170, text: "You're my forever stay", words: []},
         {t: 173, text: 'Sekani Chiamaka Joy', words: []},
-        {t: 176, text: 'I love you more than words can say ♥', words: []},
+        {t: 176, text: 'I love you more than words can say ?', words: []},
     ];
 
     var lyricsModal = document.getElementById('lyricsModal');
@@ -1007,7 +1046,7 @@ gsap.registerPlugin(ScrollTrigger);
     var lyricsRAF = null;
     var currentLyricIdx = 0;
 
-    // Build lyric lines — tap-to-advance mode
+    // Build lyric lines � tap-to-advance mode
     var lyricLineEls = [];
     lyricsData.forEach(function (line) {
         if (line.t === -1) {
@@ -1090,7 +1129,7 @@ gsap.registerPlugin(ScrollTrigger);
         if (e.key === 'Escape' && lyricsOpen) closeLyrics();
     });
 
-    // Keep vinyl spinning in sync — patch the audio button click
+    // Keep vinyl spinning in sync � patch the audio button click
     if (audioBtn) {
         audioBtn.addEventListener('click', function () {
             setTimeout(function () {

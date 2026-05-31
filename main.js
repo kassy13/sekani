@@ -1,11 +1,11 @@
 ﻿/* ============================================================
-   GSAP + ScrollTrigger â€” Birthday Website v4
+   GSAP + ScrollTrigger — Birthday Website v4
    6 Scenes: Gift | Card+Carousel | Timeline | 31 Wishes | Cake | Guestbook
    + Cursor Trail | Countdown Stats | Karaoke Lyrics | Cinematic Intro
    ============================================================ */
 gsap.registerPlugin(ScrollTrigger);
 (function () {
-    /* â”€â”€ PARTICLES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── PARTICLES ─────────────────────────────────────────── */
     var canvas = document.getElementById('particleCanvas');
     var ctx = canvas.getContext('2d');
     var W,
@@ -58,7 +58,7 @@ gsap.registerPlugin(ScrollTrigger);
         ScrollTrigger.refresh();
     });
 
-    /* â”€â”€ CONFETTI FIELD â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── CONFETTI FIELD ─────────────────────────────────────── */
     var cfField = document.createElement('div');
     cfField.style.cssText = 'position:fixed;inset:0;pointer-events:none;z-index:999;overflow:hidden';
     document.body.appendChild(cfField);
@@ -95,7 +95,7 @@ gsap.registerPlugin(ScrollTrigger);
         }
     }
 
-    /* â”€â”€ SPARKLE FIELD (gift scene) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── SPARKLE FIELD (gift scene) ─────────────────────────── */
     var sparkleField = document.getElementById('sparkleField');
     var sparkleColors = ['#FF6B9D', '#C8B8FF', '#FFE4F0', '#F5C842', '#9D4EDD'];
     function buildSparkles() {
@@ -117,10 +117,10 @@ gsap.registerPlugin(ScrollTrigger);
     }
     buildSparkles();
 
-    /* â”€â”€ CINEMATIC INTRO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── CINEMATIC INTRO ────────────────────────────────────── */
     var introCinematic = document.getElementById('introCinematic');
     var countdownStats = document.getElementById('countdownStats');
-    // Hide intro text immediately â€” removed per design
+    // Hide intro text immediately — removed per design
     if (introCinematic) introCinematic.style.display = 'none';
     // Show stats after a short delay
     gsap.to(countdownStats, {
@@ -130,7 +130,7 @@ gsap.registerPlugin(ScrollTrigger);
         delay: 0.8,
     });
 
-    /* â”€â”€ COUNTDOWN STATS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── COUNTDOWN STATS ────────────────────────────────────── */
     // Sekani's birthday: May 31, 1995
     var birthday = new Date('1995-05-31T00:00:00');
     var now = new Date();
@@ -161,7 +161,7 @@ gsap.registerPlugin(ScrollTrigger);
         if (hEl) animateCount(hEl, heartbeats, 2.5);
     }, 900);
 
-    /* â”€â”€ POSTCARD DATA (31 wishes as polaroid postcards) â”€â”€â”€â”€â”€ */
+    /* ── POSTCARD DATA (31 wishes as polaroid postcards) ───── */
     var postcardData = [
         {
             img: 'https://picsum.photos/seed/pc1/400/500',
@@ -189,7 +189,7 @@ gsap.registerPlugin(ScrollTrigger);
         },
         {
             img: 'https://picsum.photos/seed/pc5/400/500',
-            wish: 'To the most thoughtful, brilliant, and genuinely kind person I know â€” may 31 be the chapter where everything clicks into place.',
+            wish: 'To the most thoughtful, brilliant, and genuinely kind person I know — may 31 be the chapter where everything clicks into place.',
             author: 'Amara',
             tilt: -1,
         },
@@ -243,7 +243,7 @@ gsap.registerPlugin(ScrollTrigger);
         },
         {
             img: 'https://picsum.photos/seed/pc14/400/500',
-            wish: 'To the person who always shows up â€” may this year, the universe shows up for you in ways that take your breath away.',
+            wish: 'To the person who always shows up — may this year, the universe shows up for you in ways that take your breath away.',
             author: 'Funmi',
             tilt: 1,
         },
@@ -255,7 +255,7 @@ gsap.registerPlugin(ScrollTrigger);
         },
         {
             img: 'https://picsum.photos/seed/pc16/400/500',
-            wish: "May your 31st year be filled with the kind of joy that doesn't need a reason â€” just pure, effortless happiness.",
+            wish: "May your 31st year be filled with the kind of joy that doesn't need a reason — just pure, effortless happiness.",
             author: 'Dayo',
             tilt: 3.5,
         },
@@ -285,7 +285,7 @@ gsap.registerPlugin(ScrollTrigger);
         },
         {
             img: 'https://picsum.photos/seed/pc21/400/500',
-            wish: 'To 31 years of being exactly who you are â€” unapologetically, beautifully, powerfully you.',
+            wish: 'To 31 years of being exactly who you are — unapologetically, beautifully, powerfully you.',
             author: 'Ify',
             tilt: -2.5,
         },
@@ -333,7 +333,7 @@ gsap.registerPlugin(ScrollTrigger);
         },
         {
             img: 'https://picsum.photos/seed/pc29/400/500',
-            wish: 'You are one of the rare ones â€” the kind of person who makes the world better just by existing in it.',
+            wish: 'You are one of the rare ones — the kind of person who makes the world better just by existing in it.',
             author: 'Fola',
             tilt: -1,
         },
@@ -345,7 +345,7 @@ gsap.registerPlugin(ScrollTrigger);
         },
         {
             img: 'https://picsum.photos/seed/pc31/400/500',
-            wish: 'And here we are â€” 31 beautiful years later. The best is absolutely still ahead of you. We love you, Sekani. â™¥',
+            wish: 'And here we are — 31 beautiful years later. The best is absolutely still ahead of you. We love you, Sekani. ♥',
             author: 'Everyone',
             tilt: -2,
         },
@@ -353,18 +353,25 @@ gsap.registerPlugin(ScrollTrigger);
 
     /* -- MEMORY LANE (Scene 3) -- horizontal zigzag, GSAP-driven pan -- */
     var memoryPath = document.getElementById('memoryPath');
-    var realImgs = ['Images/slide1.jpeg', 'Images/slide2.jpeg', 'Images/slide3.jpeg', 'Images/slide4.jpeg', 'Images/slide5.jpeg'];
+
+    // Generate postcard image paths
+    var postcardImgs = [];
+    for (var i = 1; i <= 31; i++) {
+        var ext = i === 23 || i === 26 || i === 27 || i === 28 || i === 29 || i === 30 ? '.jpg' : '.jpeg';
+        var filename = i === 1 ? 'card 1' : 'card' + i;
+        postcardImgs.push('Images/postcards/' + filename + ext);
+    }
 
     if (memoryPath) {
         postcardData.forEach(function (p, i) {
-            var side = i % 2 === 0 ? 'top' : 'bottom';
+            var side = i % 2 === 0 ? 'left' : 'right';
             var item = document.createElement('div');
             item.className = 'mem-item mem-item-' + side;
             item.innerHTML =
                 '<div class="mem-item-card">' +
                 '<div class="mem-item-photo">' +
                 '<img src="' +
-                realImgs[i % realImgs.length] +
+                postcardImgs[i] +
                 '" alt="Memory ' +
                 (i + 1) +
                 '" loading="lazy" />' +
@@ -376,9 +383,6 @@ gsap.registerPlugin(ScrollTrigger);
                 '<p class="mem-item-wish">\u201c' +
                 p.wish +
                 '\u201d</p>' +
-                '<span class="mem-item-author">\u2014 ' +
-                p.author +
-                '</span>' +
                 '</div>' +
                 '</div>' +
                 '<div class="mem-item-stem" aria-hidden="true"></div>' +
@@ -386,45 +390,24 @@ gsap.registerPlugin(ScrollTrigger);
             memoryPath.appendChild(item);
         });
 
-        // Set up GSAP horizontal pan driven by main scroll
-        requestAnimationFrame(function () {
-            var trackWrap = document.getElementById('memTrackWrap');
-            if (!trackWrap) return;
-            var totalW = memoryPath.scrollWidth;
-            var viewW = trackWrap.offsetWidth;
-            var maxPan = Math.max(0, totalW - viewW + 40);
-
-            // Pan the track while scene3 is the active scene (beats 2→3, ~28%–50% of scroll)
-            gsap.to(memoryPath, {
-                x: -maxPan,
-                ease: 'none',
-                scrollTrigger: {
-                    trigger: '.scroll-container',
-                    start: '28% top',
-                    end: '50% top',
-                    scrub: 1.5,
-                },
-            });
-
-            // Reveal cards with a stagger as the scene enters
-            gsap.from('#memoryPath .mem-item', {
-                opacity: 0,
-                y: function (i) {
-                    return i % 2 === 0 ? -20 : 20;
-                },
-                duration: 0.5,
-                ease: 'back.out(1.4)',
-                stagger: 0.04,
-                scrollTrigger: {
-                    trigger: '.scroll-container',
-                    start: '28% top',
-                    once: true,
-                },
-            });
+        // Reveal cards with a stagger as the scene enters
+        gsap.from('#memoryPath .mem-item', {
+            opacity: 0,
+            x: function (i) {
+                return i % 2 === 0 ? -30 : 30;
+            },
+            duration: 0.6,
+            ease: 'back.out(1.4)',
+            stagger: 0.04,
+            scrollTrigger: {
+                trigger: '.scroll-container',
+                start: '28% top',
+                once: true,
+            },
         });
     }
 
-    /* â”€â”€ 31 THINGS WE LOVE (Scene 6) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── 31 THINGS WE LOVE (Scene 6) ───────────────────────── */
     var loveItems = [
         'Your laugh that fills the whole room',
         'The way you make everyone feel seen',
@@ -432,7 +415,7 @@ gsap.registerPlugin(ScrollTrigger);
         'How you turn pain into poetry',
         'Your ridiculous sense of humour',
         'The warmth you carry everywhere',
-        'Your loyalty â€” fierce and unwavering',
+        'Your loyalty — fierce and unwavering',
         'How you remember the small things',
         'Your ability to find beauty in ordinary moments',
         'The way you show up, every single time',
@@ -440,23 +423,23 @@ gsap.registerPlugin(ScrollTrigger);
         'How you love without keeping score',
         'Your curiosity about everything',
         'The grace you extend to others',
-        'Your voice â€” speaking and singing',
+        'Your voice — speaking and singing',
         'How you hold space for people',
         'Your ambition wrapped in humility',
         "The way you dance like no one's watching",
-        'Your taste â€” in music, in life, in people',
+        'Your taste — in music, in life, in people',
         'How you make hard days feel lighter',
-        'Your resilience â€” quiet and unshakeable',
+        'Your resilience — quiet and unshakeable',
         'The way you dream, big and bold',
         'Your kindness that asks for nothing back',
         'How you make ordinary days feel special',
-        'Your patience â€” a rare and precious gift',
+        'Your patience — a rare and precious gift',
         'The way you celebrate others genuinely',
         'Your creativity that surprises everyone',
         'How you carry your culture with pride',
-        'Your heart â€” open, generous, full',
+        'Your heart — open, generous, full',
         'The way you keep growing, keep becoming',
-        'Simply being you â€” Sekani Chiamaka Joy â™¥',
+        'Simply being you — Sekani Chiamaka Joy ♥',
     ];
 
     var loveGrid = document.getElementById('loveGrid');
@@ -469,7 +452,7 @@ gsap.registerPlugin(ScrollTrigger);
         });
     }
 
-    /* â”€â”€ PHOTO CAROUSEL (Scene 2) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── PHOTO CAROUSEL (Scene 2) ───────────────────────────── */
     var carouselTrack = document.getElementById('carouselTrack');
     var carouselDots = document.getElementById('carouselDots');
     var carouselPrev = document.getElementById('carouselPrev');
@@ -514,7 +497,7 @@ gsap.registerPlugin(ScrollTrigger);
         resetCarouselTimer();
     }
 
-    /* â”€â”€ VIRTUAL CAKE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── VIRTUAL CAKE ───────────────────────────────────────── */
     var micBtn = document.getElementById('micBtn');
     var micLabel = document.getElementById('micLabel');
     var cakePrompt = document.getElementById('cakePrompt');
@@ -684,12 +667,11 @@ gsap.registerPlugin(ScrollTrigger);
         }
     });
 
-    /* â”€â”€ GSAP SCENE REFS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── GSAP SCENE REFS ────────────────────────────────────── */
     var scene1 = document.getElementById('scene1');
     var scene2 = document.getElementById('scene2');
     var scene3 = document.getElementById('scene3');
     var scene4 = document.getElementById('scene4');
-    var scene5 = document.getElementById('scene5');
     var scene6 = document.getElementById('scene6');
     var giftLid = document.getElementById('giftLid');
     var giftBox = document.getElementById('giftBox');
@@ -698,21 +680,20 @@ gsap.registerPlugin(ScrollTrigger);
     var burst = document.getElementById('burst');
     var confettiBurst = document.getElementById('confettiBurst');
 
-    /* â”€â”€ INITIAL STATES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── INITIAL STATES ─────────────────────────────────────── */
     gsap.set(scene2, {y: '8vh', scale: 0.92, opacity: 0, filter: 'blur(10px)'});
     gsap.set(scene3, {y: '10vh', scale: 0.88, opacity: 0, filter: 'blur(12px)'});
-    gsap.set(scene4, {y: '12vh', scale: 0.85, opacity: 0, filter: 'blur(14px)'});
-    gsap.set(scene5, {y: '14vh', scale: 0.82, opacity: 0, filter: 'blur(16px)'});
-    gsap.set(scene6, {y: '16vh', scale: 0.79, opacity: 0, filter: 'blur(18px)'});
+    gsap.set(scene6, {y: '12vh', scale: 0.85, opacity: 0, filter: 'blur(14px)'});
+    gsap.set(scene4, {y: '14vh', scale: 0.82, opacity: 0, filter: 'blur(16px)'});
     gsap.set(giftInnerGlow, {opacity: 0});
     gsap.set(risingCard, {y: 0, opacity: 0});
     gsap.set(burst, {opacity: 0, scale: 0.5});
     gsap.set(confettiBurst.querySelectorAll('span'), {x: 0, y: 0, opacity: 0, rotation: 0});
 
-    /* â”€â”€ MASTER TIMELINE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── MASTER TIMELINE ────────────────────────────────────── */
     var tl = gsap.timeline({defaults: {ease: 'expo.inOut'}});
 
-    // Beat 0â†’1: gift opens
+    // Beat 0→1: gift opens
     tl.to(giftLid, {y: -200, rotation: -30, scale: 0.75, opacity: 0, ease: 'back.in(1.5)', duration: 0.8}, 0);
     tl.to(giftInnerGlow, {opacity: 1, duration: 0.4}, 0.3);
     tl.to(burst, {opacity: 1, scale: 1.8, duration: 0.7, ease: 'power2.out'}, 0.35);
@@ -737,25 +718,21 @@ gsap.registerPlugin(ScrollTrigger);
         0.45,
     );
 
-    // Beat 1â†’2
+    // Beat 1→2
     tl.to(scene1, {y: '-110vh', scale: 0.84, opacity: 0, filter: 'blur(18px)', duration: 1}, 1);
     tl.to(scene2, {y: '0vh', scale: 1, opacity: 1, filter: 'blur(0px)', duration: 1}, 1);
 
-    // Beat 2â†’3
+    // Beat 2→3
     tl.to(scene2, {y: '-110vh', scale: 0.84, opacity: 0, filter: 'blur(18px)', duration: 1}, 2);
     tl.to(scene3, {y: '0vh', scale: 1, opacity: 1, filter: 'blur(0px)', duration: 1}, 2);
 
-    // Beat 3â†’4
+    // Beat 3?4 (Memory Lane ? 31 Things)
     tl.to(scene3, {y: '-110vh', scale: 0.84, opacity: 0, filter: 'blur(18px)', duration: 1}, 3);
-    tl.to(scene4, {y: '0vh', scale: 1, opacity: 1, filter: 'blur(0px)', duration: 1}, 3);
+    tl.to(scene6, {y: '0vh', scale: 1, opacity: 1, filter: 'blur(0px)', duration: 1}, 3);
 
-    // Beat 4->5
-    tl.to(scene4, {y: '-110vh', scale: 0.84, opacity: 0, filter: 'blur(18px)', duration: 1}, 4);
-    tl.to(scene5, {y: '0vh', scale: 1, opacity: 1, filter: 'blur(0px)', duration: 1}, 4);
-
-    // Beat 5->6 (31 Things)
-    tl.to(scene5, {y: '-110vh', scale: 0.84, opacity: 0, filter: 'blur(18px)', duration: 1}, 5);
-    tl.to(scene6, {y: '0vh', scale: 1, opacity: 1, filter: 'blur(0px)', duration: 1}, 5);
+    // Beat 4?5 (31 Things ? Cake - LAST SCENE)
+    tl.to(scene6, {y: '-110vh', scale: 0.84, opacity: 0, filter: 'blur(18px)', duration: 1}, 4);
+    tl.to(scene4, {y: '0vh', scale: 1, opacity: 1, filter: 'blur(0px)', duration: 1}, 4);
 
     /* -- MAIN SCROLL TRIGGER -- */
     ScrollTrigger.create({
@@ -807,9 +784,7 @@ gsap.registerPlugin(ScrollTrigger);
         start: '56% top',
         once: true,
         onEnter: function () {
-            gsap.from('#scene4 .cake-wrap', {opacity: 0, y: 50, scale: 0.9, duration: 1, ease: 'back.out(1.4)'});
-            gsap.from('#scene4 .cake-header', {opacity: 0, y: 20, duration: 0.7, ease: 'power3.out', delay: 0.3});
-            gsap.from('#scene4 .cake-controls', {opacity: 0, scale: 0.8, duration: 0.7, ease: 'back.out(1.6)', delay: 0.5});
+            gsap.from('#scene6 .love-card', {opacity: 0, y: 30, scale: 0.95, duration: 0.6, ease: 'back.out(1.4)', stagger: 0.05});
         },
     });
     ScrollTrigger.create({
@@ -817,11 +792,13 @@ gsap.registerPlugin(ScrollTrigger);
         start: '74% top',
         once: true,
         onEnter: function () {
-            gsap.from('#scene5 .mosaic-item', {opacity: 0, scale: 0.9, duration: 0.7, ease: 'back.out(1.4)', stagger: 0.1});
+            gsap.from('#scene4 .cake-wrap', {opacity: 0, y: 50, scale: 0.9, duration: 1, ease: 'back.out(1.4)'});
+            gsap.from('#scene4 .cake-header', {opacity: 0, y: 20, duration: 0.7, ease: 'power3.out', delay: 0.3});
+            gsap.from('#scene4 .cake-controls', {opacity: 0, scale: 0.8, duration: 0.7, ease: 'back.out(1.6)', delay: 0.5});
         },
     });
 
-    /* â”€â”€ PROGRESS DOT CLICK â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── PROGRESS DOT CLICK ─────────────────────────────────── */
     var snapPts = [0, 1 / 4, 2 / 4, 3 / 4, 1];
     document.querySelectorAll('.prog-dot').forEach(function (dot, i) {
         dot.addEventListener('click', function () {
@@ -830,7 +807,7 @@ gsap.registerPlugin(ScrollTrigger);
         });
     });
 
-    /* â”€â”€ AUDIO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── AUDIO ──────────────────────────────────────────────── */
     var audio = document.getElementById('bgAudio');
     var audioBtn = document.getElementById('audioBtn');
     var iconPlay = document.getElementById('iconPlay');
@@ -861,7 +838,7 @@ gsap.registerPlugin(ScrollTrigger);
             setPlaying(true);
         })
         .catch(function () {
-            // Autoplay blocked â€” start on first interaction
+            // Autoplay blocked — start on first interaction
             var startOnce = function () {
                 if (!playing) setPlaying(true);
                 window.removeEventListener('wheel', startOnce);
@@ -873,7 +850,7 @@ gsap.registerPlugin(ScrollTrigger);
             window.addEventListener('click', startOnce, {passive: true});
         });
 
-    /* â”€â”€ CURSOR TRAIL â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── CURSOR TRAIL ───────────────────────────────────────── */
     var trailCanvas = document.getElementById('cursorTrail');
     var tCtx = trailCanvas.getContext('2d');
     var trailW, trailH;
@@ -946,7 +923,7 @@ gsap.registerPlugin(ScrollTrigger);
     }
     animateTrail();
 
-    /* â”€â”€ KARAOKE LYRICS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── KARAOKE LYRICS ─────────────────────────────────────── */
     // Edit these lines to match your actual song lyrics and timestamps (in seconds)
     // Format: { t: startTime, text: 'lyric line', words: [wordEndTimes...] }
     // Set t:-1 for section breaks (blank spacer lines)
@@ -1014,7 +991,7 @@ gsap.registerPlugin(ScrollTrigger);
         {t: 167, text: 'Happy birthday, my sister', words: []},
         {t: 170, text: "You're my forever stay", words: []},
         {t: 173, text: 'Sekani Chiamaka Joy', words: []},
-        {t: 176, text: 'I love you more than words can say â™¥', words: []},
+        {t: 176, text: 'I love you more than words can say ♥', words: []},
     ];
 
     var lyricsModal = document.getElementById('lyricsModal');
@@ -1030,7 +1007,7 @@ gsap.registerPlugin(ScrollTrigger);
     var lyricsRAF = null;
     var currentLyricIdx = 0;
 
-    // Build lyric lines â€” tap-to-advance mode
+    // Build lyric lines — tap-to-advance mode
     var lyricLineEls = [];
     lyricsData.forEach(function (line) {
         if (line.t === -1) {
@@ -1113,7 +1090,7 @@ gsap.registerPlugin(ScrollTrigger);
         if (e.key === 'Escape' && lyricsOpen) closeLyrics();
     });
 
-    // Keep vinyl spinning in sync â€” patch the audio button click
+    // Keep vinyl spinning in sync — patch the audio button click
     if (audioBtn) {
         audioBtn.addEventListener('click', function () {
             setTimeout(function () {
